@@ -1,0 +1,33 @@
+#include<iostream>
+using std::cin;
+using std::cout;
+using std::endl;
+int main() {
+	const int MAX = 8;
+	int data[MAX];
+	int i, j, temp;
+
+	cout << "Input data:";
+	for (i = 0; i < MAX; i++)
+		cin >> data[i];
+	cout << '\n';
+
+	cout << "Before sorting:\t";
+	for (i = 0; i < MAX; i++)
+		cout << data[i] << '\t';
+
+	for (j = 0; j <= MAX - 2; j++)
+	{
+		cout << endl << "Round " << j + 1 << ":\t";
+		for (i = j + 1; i <= MAX - 1; i++)
+		{
+			if (data[j] < data[i])
+			{
+				temp = data[j]; data[j] = data[i]; data[i] = temp;
+			}
+		}
+		for (i = 0; i < MAX; i++)
+			cout << data[i] << '\t';
+	}
+	cout << endl;
+}
